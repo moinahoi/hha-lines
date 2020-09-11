@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>HHA-Lines | Welche Linie gheört zur Hochbahn?</title>
+    <meta
+      name="description"
+      content="Finde heraus, welche Linie zur Hochbahn gehört."
+    />
+    <style type="text/css">
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+        font-weight: 400;
+      }
+      #line {
+        color: #ffffff;
+        background-color: violet;
+        width: 100vw;
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        line-height: 100vh;
+        line-height: calc(var(--vh, 1vh) * 100);
+        font-size: calc(var(--vwh, 1vh) * 50);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="line" value="6" />
+
+    <script>
+      let lines = [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "X11",
+        "13",
+        "14",
+        "17",
+        "19",
+        "20",
+        "X22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "34",
+        "X35",
+        "36",
+        "37",
+        "X40",
+        "X86",
+        "111",
+        "112",
+        "113",
+        "114",
+        "116",
+        "118",
+        "140",
+        "141",
+        "142",
+        "143",
+        "145",
+        "146",
+        "150",
+        "151",
+        "152",
+        "153",
+        "154",
+        "156",
+        "157",
+        "160",
+        "161",
+        "162",
+        "163",
+        "164",
+        "166",
+        "167",
+        "168",
+        "170",
+        "171",
+        "172",
+        "173",
+        "174",
+        "176",
+        "177",
+        "178",
+        "179",
+        "180",
+        "181",
+        "183",
+        "191",
+        "192",
+        "213",
+        "214",
+        "240",
+        "241",
+        "245",
+        "250",
+        "251",
+        "252",
+        "254",
+        "260",
+        "261",
+        "263",
+        "270",
+        "271",
+        "274",
+        "275",
+        "276",
+        "281",
+        "283",
+        "288",
+        "292",
+        "340",
+        "345",
+        "349",
+        "351",
+        "354",
+        "355",
+        "362",
+        "368",
+        "375",
+        "381",
+        "391",
+        "392",
+        "443",
+        "451",
+        "461",
+        "475",
+        "543",
+        "544",
+        "562",
+        "567",
+        "600",
+        "603",
+        "604",
+        "605",
+        "606",
+        "607",
+        "608",
+        "611",
+        "617",
+        "618",
+        "640",
+        "641",
+        "856",
+        "380(Shuttle)",
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+      ];
+
+      let input = document.getElementById("line");
+
+      function checkLine() {
+        let search = input.value;
+        console.log(search);
+        if (lines.includes(search)) {
+          console.log("yay");
+          input.style.backgroundColor = "#00e196";
+        } else {
+          console.log("nay");
+          input.style.backgroundColor = "#fa1e41";
+        }
+      }
+
+      input.addEventListener("input", (e) => {
+        input.value = input.value.toLocaleUpperCase();
+        checkLine();
+      });
+
+      document.addEventListener("DOMContentLoaded", function (e) {
+        checkLine();
+      });
+
+      window.addEventListener("resize", () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+        let vw = window.innerWidth * 0.01;
+
+        if (vh > vw) {
+          document.documentElement.style.setProperty("--vwh", `${vw}px`);
+        } else {
+          document.documentElement.style.setProperty("--vwh", `${vh}px`);
+        }
+      });
+    </script>
+  </body>
+</html>
