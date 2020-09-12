@@ -2,12 +2,13 @@
 
 <html lang="de">
   <head>
-    <meta charset="utf-8" />
     <title>HHA-Lines | Welche Linie gehört zur Hochbahn?</title>
+    <meta charset="utf-8" />
     <meta
       name="description"
       content="Finde heraus, welche Linie zur Hamburger Hochbahn gehört."
     />
+    <meta name="viewport" content="with=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="logo.png" sizes="54x52" />
     <style type="text/css">
       body {
@@ -31,7 +32,12 @@
     </style>
   </head>
   <body>
-    <input id="line" value="6" />
+    <input
+      id="line"
+      value="6"
+      type="text"
+      aria-label="Welche Linie soll überprüft werden? zB '6', 'X35'"
+    />
 
     <script>
       let lines = [
