@@ -4,11 +4,11 @@ This project is to provide a simple way of finding out if a certain transportati
 
 Color scheme inspired by https://www.hvv-switch.de/
 
-Every line within the operation of the Hamburger Hochbahn is `green` or `red` otherwise.
+Every line within the operation of the Hamburger Hochbahn is `green`, otherwise `red` (VHH, S-Bahn).
 
 # Pre-Requisites
 
-Nothing. No seriously: No build tool needed. It's just vanilla script and basic HTML plus CSS.
+Nothing. No seriously: No build tool needed. It's just vanilla javascript and basic HTML plus CSS.
 
 # Some usefull features
 
