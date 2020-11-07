@@ -9,7 +9,9 @@
       content="Finde heraus, welche Linie zur Hamburger Hochbahn gehört."
     />
     <meta name="viewport" content="with=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="logo.png" sizes="54x52" />
+    <meta name="theme-color" content="#fa1e41" />
+    <link rel="icon" type="image/png" href="/logo.png" sizes="54x52" />
+    <link rel="manifest" href="/manifest.json" />
     <style type="text/css">
       body {
         font-family: sans-serif;
@@ -171,6 +173,15 @@
       ];
 
       let input = document.getElementById('line');
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then((res) => console.log('service worker registered'))
+            .catch((err) => console.log('service worker not registered', err));
+        });
+      }
 
       function checkLine() {
         let search = input.value;
